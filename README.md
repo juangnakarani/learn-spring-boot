@@ -1,4 +1,4 @@
-#Learn Spring Boot 1.5.10
+# Learn Spring Boot 1.5.10
 This is my code documentation while learning about Spring Boot 1.5.10.
 I use Eclipse Oxygen for the IDE and Gradle Build Tools version 4.1
 
