@@ -1,10 +1,15 @@
 package com.juangnakarani.learn.beans;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class User {
 	private String firstName;
 	private String lastName;
 	private String email;
 	
+	//default constructor is necessary for build JSON request 
+	public User() {}
 	
 	public User(String firstName, String lastName, String email) {
 		super();
@@ -31,6 +36,5 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 }
