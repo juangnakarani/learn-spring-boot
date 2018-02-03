@@ -1,7 +1,5 @@
 package com.juangnakarani.learn.controller;
 
-import java.util.Map;
-
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +21,9 @@ private User user;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value="/user")
-	public ResponseEntity<?> addUser(@RequestBody User user) {
+	public ResponseEntity<String> addUser(@RequestBody User user) {
 		 this.user = user;
-		 return new ResponseEntity<Object>("Successfully login", new HttpHeaders(), HttpStatus.OK);
+		 return new ResponseEntity<String>("Successfully login", new HttpHeaders(), HttpStatus.OK);
 	}
 	
 }
