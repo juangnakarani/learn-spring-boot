@@ -2,6 +2,7 @@ group 'com.juangnakarani'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+
 // Apply the application plugin to add support for building an application
 apply plugin: 'application'
 
