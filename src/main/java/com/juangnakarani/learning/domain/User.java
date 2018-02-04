@@ -1,11 +1,34 @@
-package com.juangnakarani.learning.entity;
+package com.juangnakarani.learning.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class User {
+@Entity
+public class User{
+	/**
+	 * 
+	 */
+//	private static final long serialVersionUID = 1L;
+
+//	@Id
+//	@GeneratedValue
+//	private Long id;
+	
+//	@Column
 	private String firstName;
+	
+//	@Column
 	private String lastName;
+	
+//	@Column
+	@Id
 	private String email;
 	
 	//default constructor is necessary for build JSON request 
@@ -18,6 +41,14 @@ public class User {
 		this.email = email;
 	}
 	
+//	public Long getId() {
+//		return id;
+//	}
+//
+//	public void setId(Long id) {
+//		this.id = id;
+//	}
+
 	public String getFirstName() {
 		return firstName;
 	}

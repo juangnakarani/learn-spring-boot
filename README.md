@@ -15,7 +15,7 @@ of this file:
 	Sometimes, We will need some OS arguments to application. e.g: `java -jar -Dserver.port=8888 learn-spring-boot-1.0.jar`. 
 
 ## learn controller
-File `Auth.java` is learn about controller. There are url mapping, request method(get|post), and consume request body.
+File `UserController.java` is learn about controller. There are url mapping, request method(get|post), and consume request body.
 The interesting one is the Spring Boot doesn't need annotation `@Consumes("application/json")` like previous Spring MVC or JAX-RS. 
 Today Spring Boot use `fasterxml` library for JSON data-binding. It's like a magic, just set java beans that have equal class member with request payload and JSON parser will work as expected.
 In this example is `User.java`. The critical point is the java bean must have default constructor. Exception JSON parse error will be facing if there is no default constructor.
