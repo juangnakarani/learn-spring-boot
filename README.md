@@ -1,6 +1,6 @@
-# Learn Spring Boot 1.5.10
+# Learning Spring Boot 1.5.10
 This is my code documentation while learning about Spring Boot 1.5.10.
-I use Eclipse Oxygen for the IDE and Gradle Build Tools version 4.1
+I use Eclipse Oxygen for the IDE and Gradle Build Tools version 4.1.
 
 On this Eclipse version, Gradle tool was adding by default installation, so I don't need install 
 Gradle plugin any more. It just create from menu File -> New -> Project -> Gradle Project.
@@ -14,9 +14,11 @@ of this file:
 	This function will call `SpringApplication.run(App.class, args)`. The parameter args is passing from system properties.
 	Sometimes, We will need some OS arguments to application. e.g: `java -jar -Dserver.port=8888 learn-spring-boot-1.0.jar`. 
 
-`Auth.java` file is learn about controller. There are url mapping, request method(get|post), consume request body.
+## learn controller
+File `Auth.java` is learn about controller. There are url mapping, request method(get|post), and consume request body.
 The interesting one is the Spring Boot doesn't need annotation `@Consumes("application/json")` like previous Spring MVC or JAX-RS. 
-Today Spring Boot use `fasterxml` library for JSON data-binding. It`s like a magic, just set java beans that have equal class member with request payload and JSON parser will work as expected.
-In this example is `User.java`. The critical point is the java bean must have default constructor. Exception JSON parse error will be facing if there is no default constructor 
+Today Spring Boot use `fasterxml` library for JSON data-binding. It's like a magic, just set java beans that have equal class member with request payload and JSON parser will work as expected.
+In this example is `User.java`. The critical point is the java bean must have default constructor. Exception JSON parse error will be facing if there is no default constructor.
+
 
 

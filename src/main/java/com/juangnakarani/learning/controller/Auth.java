@@ -1,4 +1,4 @@
-package com.juangnakarani.learn.controller;
+package com.juangnakarani.learning.controller;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juangnakarani.learn.beans.User;
+import com.juangnakarani.learning.beans.User;
 
 @RestController
 @RequestMapping("/auth")
