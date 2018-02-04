@@ -20,5 +20,14 @@ The interesting one is the Spring Boot doesn't need annotation `@Consumes("appli
 Today Spring Boot use `fasterxml` library for JSON data-binding. It's like a magic, just set java beans that have equal class member with request payload and JSON parser will work as expected.
 In this example is `User.java`. The critical point is the java bean must have default constructor. Exception JSON parse error will be facing if there is no default constructor.
 
+## test run application
+It's simple to run this application, just right click file `App.java` -> run as java application or by executing gradle task: `gradle run`. For print out stacktrace use `--stacktrace`.
+
+## configuration
+One of main features Spring Boot is externalize configuration. It's called `application.properties`. This file can put in classpath root or directory `/config`. 
+In my code I put it on `/config`. 
+I use YAML ('.yml') files as an alternative to '.properties'.
+
+
 
 
