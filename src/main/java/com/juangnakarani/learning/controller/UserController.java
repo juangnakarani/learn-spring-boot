@@ -1,5 +1,7 @@
 package com.juangnakarani.learning.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,7 +16,6 @@ import com.juangnakarani.learning.domain.User;
 import com.juangnakarani.learning.repository.UserRepository;
 
 @RestController
-@RequestMapping("/auth")
 public class UserController {
 	// private User user;
 
@@ -44,5 +45,19 @@ public class UserController {
 		}
 		return new ResponseEntity<String>("email_already_registered", new HttpHeaders(), status);
 	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/users")
+	public ResponseEntity<List<User>> findAll() {
+		List<User> users = this.userRepository.findAll();
+		HttpStatus status;
+		if (users != null) {
+			status = HttpStatus.OK;
+		} else {
+			status = HttpStatus.BAD_REQUEST;
+		}
+		
+		return new ResponseEntity<List<User>>(users, new HttpHeaders(), status);
+	}
+
 
 }
