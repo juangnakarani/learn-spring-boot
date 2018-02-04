@@ -26,7 +26,7 @@ It's simple to run this application, just right click file `App.java` -> run as 
 ## configuration
 One of main features Spring Boot is externalize configuration. It's called `application.properties`. This file can put in classpath root or directory `/config`. 
 In my code I put it on `/config`. 
-I use YAML ('.yml') files as an alternative to '.properties'.
+I use YAML (`.yml`) files as an alternative to `.properties`.
 
 
 

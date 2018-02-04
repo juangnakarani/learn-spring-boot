@@ -1,2 +1,17 @@
 server:
-  port: 8080
+    port: 9090
+    
+spring:
+  datasource:
+    platform: postgres
+    url:jdbc: postgresql://192.168.43.123:5432/learning-jpa
+    username: postgres
+    password: 
+    driverClassName: org.postgresql.Driver
+   
+  jpa:
+    database: POSTGRESQL
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop

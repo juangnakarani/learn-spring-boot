@@ -1,4 +1,4 @@
-package com.juangnakarani.learning.beans;
+package com.juangnakarani.learning.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
