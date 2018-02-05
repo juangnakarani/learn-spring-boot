@@ -1,13 +1,13 @@
 server:
   port: 8080
-  contextPath: /api/v1
+  context-path: /api/v1
     
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/learning-jpa
     username: duke
     password: 12345678
-    driverClassName: org.postgresql.Driver
+    driver-class-name: org.postgresql.Driver
   jpa:
     database: POSTGRESQL
     generate-ddl: true
