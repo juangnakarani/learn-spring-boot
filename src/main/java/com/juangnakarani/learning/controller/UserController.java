@@ -47,7 +47,7 @@ public class UserController {
 			httpStatus = HttpStatus.BAD_REQUEST;
 			statusText = "email_already_registered";
 		}
-		return new ResponseEntity<String>("email_already_registered", new HttpHeaders(), httpStatus);
+		return new ResponseEntity<String>(statusText, new HttpHeaders(), httpStatus);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/users")
