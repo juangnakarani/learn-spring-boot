@@ -14,17 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.juangnakarani.learning.domain.User;
 import com.juangnakarani.learning.repository.UserRepository;
+import com.juangnakarani.learning.service.UserService;
 
 @RestController
 public class UserController {
 	// private User user;
 
 	@Autowired
-	private UserRepository userRepository;
+	private UserService userService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/user")
 	public ResponseEntity<User> getUser(@RequestParam(value = "email") String email) {
-		User user = this.userRepository.findByEmail(email);
+		User user = this.userService.findByEmail(email);
 		HttpStatus status;
 		if (user != null) {
 			status = HttpStatus.OK;
@@ -37,8 +38,8 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.POST, value = "/user")
 	public ResponseEntity<String> addUser(@RequestBody User user) {
 		HttpStatus status;
-		if (this.userRepository.findByEmail(user.getEmail()) == null) {
-			this.userRepository.save(user);
+		if (this.userService.findByEmail(user.getEmail()) == null) {
+			this.userService.save(user);
 			status = HttpStatus.OK;
 		} else {
 			status = HttpStatus.BAD_REQUEST;
@@ -48,7 +49,7 @@ public class UserController {
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/users")
 	public ResponseEntity<List<User>> findAll() {
-		List<User> users = this.userRepository.findAll();
+		List<User> users = this.userService.findAll();
 		HttpStatus status;
 		if (users != null) {
 			status = HttpStatus.OK;
