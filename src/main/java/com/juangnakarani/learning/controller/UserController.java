@@ -26,38 +26,41 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.GET, value = "/user")
 	public ResponseEntity<User> getUser(@RequestParam(value = "email") String email) {
 		User user = this.userService.findByEmail(email);
-		HttpStatus status;
+		HttpStatus httpStatus;
 		if (user != null) {
-			status = HttpStatus.OK;
+			httpStatus = HttpStatus.OK;
 		} else {
-			status = HttpStatus.BAD_REQUEST;
+			httpStatus = HttpStatus.BAD_REQUEST;
 		}
-		return new ResponseEntity<User>(user, new HttpHeaders(), status);
+		return new ResponseEntity<User>(user, new HttpHeaders(), httpStatus);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/user")
 	public ResponseEntity<String> addUser(@RequestBody User user) {
-		HttpStatus status;
+		HttpStatus httpStatus;
+		String statusText;
 		if (this.userService.findByEmail(user.getEmail()) == null) {
 			this.userService.save(user);
-			status = HttpStatus.OK;
+			httpStatus = HttpStatus.OK;
+			statusText = "register_success";
 		} else {
-			status = HttpStatus.BAD_REQUEST;
+			httpStatus = HttpStatus.BAD_REQUEST;
+			statusText = "email_already_registered";
 		}
-		return new ResponseEntity<String>("email_already_registered", new HttpHeaders(), status);
+		return new ResponseEntity<String>("email_already_registered", new HttpHeaders(), httpStatus);
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "/users")
 	public ResponseEntity<List<User>> findAll() {
 		List<User> users = this.userService.findAll();
-		HttpStatus status;
+		HttpStatus httpStatus;
 		if (users != null) {
-			status = HttpStatus.OK;
+			httpStatus = HttpStatus.OK;
 		} else {
-			status = HttpStatus.BAD_REQUEST;
+			httpStatus = HttpStatus.BAD_REQUEST;
 		}
 		
-		return new ResponseEntity<List<User>>(users, new HttpHeaders(), status);
+		return new ResponseEntity<List<User>>(users, new HttpHeaders(), httpStatus);
 	}
 
 
